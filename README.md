@@ -8,9 +8,26 @@
 - tensorflow 2.7.0 (2.x)
 - colab 환경에서 웹캠 사용 및 창 띄우기 불가능
 
+# keypoint_logging(56frame).ipynb
+-각 동작의 왼손, 오른손을 라벨링하여 동작 
+- 56frame으로 고정
+- 0. Wrist 점을 X:0, Y:0로 정의 하여 상대 위치 기록
+- 정규화
+- csv 파일로 저장
+
 # data_preprocessing.ipynb
+- 56frame보다 길거나 짧은 데이터 처리
+- 하나의 파일로 취합
 
-
+# keypoint_classification.ipynb
+- 분류 모델 학습
+- lstm(선택), DNN, CNN
+- tensorflow 모델로 변환
+  
+# keypoint_classifier_2d.py
+- keypoint_logging 파일에서 모드를 변환하면 동작 인식모드로 사용가능
+- keypoint_logging에서 넘겨주는 데이터를 keypoint_classification에서 학습시킨 모델에 넣어 해당 동작의 추정 정도를 그래프로 그림
+- 그래프에 피크가 생기면 동작을 한 번 한 것으로 판단, 피크값을 기준으로 동작의 정확도 평가
 
 
 
